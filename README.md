@@ -102,7 +102,7 @@ Ce tutoriel vous guide à travers la création d'un système modulaire dans une 
 Avec ces étapes, vous avez configuré un module Users simple dans CodeIgniter 4, en utilisant une architecture modulaire qui facilite la gestion et l'extension de votre application. Vous pouvez maintenant accéder à votre module via l'URL /users pour voir le message "Hello from the Users module!".
 
 [🇫🇷 Français](#fr) | [🇺🇸 English](#en) 
-EN
+## EN
 ---
 # Tutorial: Creating a Modular System in CodeIgniter 4
 
