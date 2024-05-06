@@ -132,16 +132,17 @@ This tutorial guides you through creating a modular system in a CodeIgniter 4 ap
      * Include Modules Routes Files
      * ---------------------------------------------------------------
      */
-    if (file_exists(ROOTPATH . 'modules')) {
-        $modulesPath = ROOTPATH . 'modules/';
-        $modules = scandir($modulesPath);
-
-        foreach ($modules as $module) {
-            if ($module === '.' || $module === '..') continue;
-            if (is_dir($modulesPath . $module)) {
-                $routesPath = $modulesPath . $module . '/Config/Routes.php';
-                if (file_exists($routesPath)) {
-                    require($routesPath);
+    if (file_exists(ROOTPATH.'modules')) {
+        $modulesDirectory = ROOTPATH.'modules/';
+        $moduleFolders = scandir($modulesDirectory);
+    
+        foreach ($moduleFolders as $moduleFolder) {
+            if ($moduleFolder === '.' || $moduleFolder === '..') continue;
+            $individualModulePath = $modulesDirectory . $moduleFolder;
+            if (is_dir($individualModulePath)) {
+                $moduleRoutesPath = $individualModulePath . '/Config/Routes.php';
+                if (file_exists($moduleRoutesPath)) {
+                    require($moduleRoutesPath);
                 }
             }
         }
